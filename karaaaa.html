@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call Me Karaaaa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Protest+Strike&display=swap" rel="stylesheet">
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/karaaaa.css" />
+
+  <!-- Background -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Protest Strike', sans-serif;
+      background-image: url("file:///C:/Karaaaa/website%201st/img/1728528129900.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    /* Reset margin */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #222;
+      padding-top: 30px;
+      transition: transform 0.3s ease;
+      transform: translateX(-250px);
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-logo {
+      font-family: 'Audiowide', sans-serif;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+      text-decoration: none;
+    }
+
+    .sidebar-logo span {
+      color: rgb(252, 13, 13);
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar-item {
+      color: #bbb;
+      font-size: 18px;
+      padding: 15px 25px;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .sidebar-item:hover {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .sidebar-toggle {
+      position: absolute;
+      top: 20px;
+      right: -40px;
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar-toggle:hover {
+      background-color: #444;
+    }
+
+    /* Content area */
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .content.shifted {
+      margin-left: 0;
+    }
+
+    /* Responsive Design for mobile */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        width: 0;
+      }
+
+      .sidebar.open {
+        width: 200px;
+      }
+
+      .sidebar-logo {
+        font-size: 22px;
+      }
+
+      .sidebar-item {
+        font-size: 16px;
+      }
+
+      .content.shifted {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#" class="sidebar-logo">CALL ME <span>KARAAAA</span></a>
+    <div class="sidebar-links">
+      <a href="#" class="sidebar-item">Home</a>
+      <a href="#project" class="sidebar-item">Project</a>
+      <a href="#socmed" class="sidebar-item">Social Media</a>
+    </div>
+    <div class="sidebar-toggle" id="sidebar-toggle">
+      <i data-feather="menu"></i>
+    </div>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content" id="content">
+    <h1>Welcome to Karaaaa's Website</h1>
+    <p>Explore my work, projects, and social media connections.</p>
+    <!-- More content can go here -->
+  </div>
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace();
+
+    // Sidebar toggle functionality
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const content = document.getElementById('content');
+
+    sidebarToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
+      content.classList.toggle('shifted');
+    });
+  </script>
+</body>
+
+</html>

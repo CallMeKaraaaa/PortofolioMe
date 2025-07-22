@@ -1,0 +1,110 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: 'Protest Strike', sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.sidebar-logo {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* Sidebar links */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.sidebar-item {
+  color: #d31c68;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for links */
+.sidebar-item:hover {
+  background-color: #f2f2f2;
+  color: #ff6347;
+}
+
+/* Sidebar extra (icons) */
+.sidebar-extra {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.sidebar-extra a {
+  color: #000;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Hover effect for icons */
+.sidebar-extra a:hover {
+  color: #d31c68;
+}
+
+/* Responsive design: Mobile view */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar-logo {
+    font-size: 22px;
+  }
+
+  .sidebar-item {
+    font-size: 18px;
+  }
+
+  .sidebar-links {
+    margin-top: 20px;
+  }
+}
+
+/* Hide sidebar in mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 0;
+    padding-top: 0;
+  }
+
+  .sidebar.open {
+    width: 250px;
+  }
+
+  .sidebar .sidebar-item {
+    display: none;
+  }
+
+  .sidebar.open .sidebar-item {
+    display: block;
+  }
+
+  .sidebar-extra {
+    display: block;
+  }
+}
